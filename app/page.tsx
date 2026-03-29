@@ -58,9 +58,9 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-2xl backdrop-blur-xl">
 
             {/* Image Header - High visibility */}
-            <div className="relative h-75 w-full transition-all duration-500">
+            <div className="relative h-80 w-full transition-all duration-500">
               <Image
-                src='/IMG_2232.png'
+                src='/ashi.jpeg'
                 alt="Ashika Kannangara"
                 fill
                 className="object-cover object-top"
@@ -136,19 +136,19 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           {[
             {
-              title: "Real-Time Delivery Insights Dashboard",
+              title: "Real-Time Delivery Insights Dashboard MAS-Bodyline,Sri Lanka",
               desc: "Developed an interactive dashboard using Microsoft Power BI to monitor production and delivery performance based on purchase order completion. The solution provides visibility into key metrics such as order quantity, finished goods, and work-in-progress (WIP), along with closure status and department-wise responsibility. Integrated multiple data points (VSM, modules, timelines, and operational KPIs) to enable real-time tracking and decision-making. The dashboard helps stakeholders identify production bottlenecks, monitor open vs closed orders, and improve operational efficiency through actionable insights and data-driven analysis."
             },
             {
-              title: "PED Performance Analytics Dashboard",
+              title: "PED Performance Analytics Dashboard MAS-Bodyline,Sri Lanka",
               desc: "Designed and developed an interactive performance monitoring dashboard using Microsoft Power BI to track PED (Planned vs Execution Delivery) performance across multiple production modules and weeks. The dashboard utilizes a heatmap visualization to highlight open and closed statuses, enabling quick identification of delays, bottlenecks, and high-risk modules. Integrated filters such as value stream, closure status, and PED categories to allow dynamic data exploration and drill-down analysis. This solution supports operational teams in monitoring weekly performance trends, improving delivery timelines, and driving data-driven decision-making through clear visual insights."
             },
             {
-              title: "PO Completion VSM Insights Dashboard",
+              title: "PO Completion VSM Insights Dashboard MAS-Bodyline,Sri Lanka",
               desc: "Developed an interactive analytics dashboard using Microsoft Power BI to monitor purchase order (PO) completion performance across value streams and production modules. The dashboard provides visibility into order-wise completion percentages, highlighting gaps across multiple operational stages and identifying responsible departments such as Production, MQA, and RMW. Incorporated detailed metrics including order quantity, finished goods, WIP, and off-percentage (OFF%), along with department-wise WIP analysis to track bottlenecks. Enabled users to drill down into order-level data with actionable insights, supporting performance monitoring, delay analysis, and continuous process improvement."
             },
             {
-              title: "Customer Complaint Analysis",
+              title: "Customer Complaint Analysis Hayleys Fabric,Sri Lanka",
               desc: "Identified root causes of customer complaints and improved processes using structured reporting and data analysis. Delivered insights that supported better decision-making and process improvements."
             }
           ].map((project, i) => (
