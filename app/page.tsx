@@ -1,193 +1,198 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-slate-50">
-      <main className="mx-auto flex min-h-screen max-w-5xl flex-col gap-16 px-6 py-16 md:flex-row md:items-center md:justify-between md:py-24">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-50 relative overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-sky-500/10 blur-[120px]" />
+      </div>
+
+      <main className="relative mx-auto flex min-h-screen max-w-6xl flex-col gap-16 px-6 py-16 md:flex-row md:items-center md:justify-between md:py-24">
+
         {/* Hero / Intro */}
-        <section className="max-w-xl space-y-6">
-          <p className="inline-flex rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-slate-300 shadow-sm backdrop-blur">
+        <section className="max-w-xl space-y-7">
+          <p className="inline-flex rounded-full border border-slate-700/70 bg-slate-900/40 px-4 py-1 text-xs font-medium uppercase tracking-[0.25em] text-slate-300 backdrop-blur-md shadow-sm">
             Business Analyst · Portfolio
           </p>
-          <div className="space-y-4">
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+
+          <div className="space-y-5">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl leading-tight">
               Hi, I&apos;m{" "}
-              <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-300 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
                 Ashika Kannangara
               </span>
               , a business analyst turning data into decisions.
             </h1>
+
             <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               I am a passionate and results-driven Business Analyst with a keen
-              eye for detail and a deep understanding of data-driven
-              decision-making. I love uncovering insights that drive business
-              growth and operational efficiency.
+              eye for detail and a strong focus on data-driven decision-making.
+              I enjoy uncovering insights that drive business growth and
+              operational efficiency.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 pt-2">
+
+          <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="mailto:youremail@example.com"
-              className="inline-flex items-center rounded-full bg-emerald-400 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+              href="mailto:ash.kannangara@gmail.com"
+              className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105"
             >
               Let&apos;s work together
             </a>
+
             <a
               href="#projects"
-              className="inline-flex items-center rounded-full border border-slate-600 px-6 py-2.5 text-sm font-medium text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
+              className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/40 px-6 py-2.5 text-sm font-medium text-slate-100 backdrop-blur transition hover:border-emerald-300 hover:text-emerald-200 hover:scale-105"
             >
               View projects
             </a>
           </div>
         </section>
 
-        {/* Right column card */}
-        <section className="mt-10 w-full max-w-sm md:mt-0">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-2xl shadow-slate-950/70 backdrop-blur">
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-500/20 blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-sky-500/20 blur-3xl" />
+        {/* Right Card with Integrated Image */}
+        <section className="w-full max-w-sm">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-2xl backdrop-blur-xl">
 
-            <div className="relative space-y-5">
-              <div className="space-y-1">
-                <p className="text-xs font-medium uppercase tracking-[0.25em] text-slate-400">
+            {/* Image Header */}
+            <div className="relative h-64 w-full grayscale-[20%] hover:grayscale-0 transition-all duration-500">
+              <Image
+                src='/IMG_2232.jpg'
+                alt="Ashika Kannangara"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
+            </div>
+
+            <div className="p-6 relative space-y-6">
+              {/* Snapshot */}
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-slate-400 mb-2">
                   Snapshot
                 </p>
-                <p className="text-lg font-semibold text-slate-50">
-                  Business Analyst · 4+ years of experience
+                <p className="text-sm leading-relaxed text-slate-200">
+                  I am a Business Analyst who transforms data into actionable
+                  insights to support informed decision-making. I analyze
+                  business processes and deliver practical, data-driven
+                  solutions that drive efficiency and growth.
                 </p>
               </div>
 
-              <dl className="grid grid-cols-2 gap-4 text-sm">
-                <div className="space-y-1">
-                  <dt className="text-xs uppercase tracking-wide text-slate-400">
-                    Focus areas
-                  </dt>
-                  <dd className="text-slate-100">
-                    Requirements, process optimization, data-driven decision-making
-                  </dd>
-                </div>
-                <div className="space-y-1">
-                  <dt className="text-xs uppercase tracking-wide text-slate-400">
-                    Experience
-                  </dt>
-                  <dd className="text-slate-100">4+ years</dd>
-                </div>
-                <div className="space-y-1">
-                  <dt className="text-xs uppercase tracking-wide text-slate-400">
-                    Industries
-                  </dt>
-                  <dd className="text-slate-100">
-                    Apparel · Manufacturing · Technology
-                  </dd>
-                </div>
-                <div className="space-y-1">
-                  <dt className="text-xs uppercase tracking-wide text-slate-400">
-                    Tools
-                  </dt>
-                  <dd className="text-slate-100">
-                    Excel · SQL · Tableau · Power BI · Jira
-                  </dd>
-                </div>
-              </dl>
+              {/* Focus Areas */}
+              <div>
+                <dt className="text-xs uppercase tracking-wide text-slate-400 mb-2">
+                  Focus Areas
+                </dt>
+                <dd className="flex flex-wrap gap-2 text-slate-100">
+                  {[
+                    "Requirements",
+                    "Process Optimization",
+                    "Data-driven Decision Making",
+                    "Production & Operations",
+                    "Supply Chain & Planning",
+                    "Finance & Costing",
+                    "Quality & Compliance",
+                    "Data & Reporting",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-slate-700/60 bg-slate-800/40 px-3 py-1 text-[10px] backdrop-blur transition hover:border-emerald-400 hover:text-emerald-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </dd>
+              </div>
 
-              <div className="mt-4 border-t border-slate-800 pt-4 text-xs text-slate-300">
-                Worked with: MAS · IFS · Hayleys Fabric PLC
+              {/* Tools */}
+              <div className="space-y-4">
+                <dt className="text-xs uppercase tracking-wide text-slate-400">
+                  Top Tools
+                </dt>
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <div className="p-2 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                    <p className="text-emerald-400 font-bold mb-1 italic">Analytics</p>
+                    <p>Power BI / Tableau</p>
+                  </div>
+                  <div className="p-2 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                    <p className="text-sky-400 font-bold mb-1 italic">Enterprise</p>
+                    <p>SAP / Jira</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Skills & Projects preview */}
-      <section className="mx-auto flex max-w-5xl flex-col gap-8 px-6 pb-20 md:flex-row">
-        <div className="w-full space-y-4 md:w-1/2">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
-            Summary & skills
-          </h2>
-          <p className="text-sm leading-relaxed text-slate-300">
-            I specialize in gathering and analyzing requirements, bridging the
-            gap between stakeholders and technical teams, and delivering
-            solutions aligned with organizational goals. I enjoy collaborating
-            with diverse teams to solve complex challenges and turn insights
-            into action.
-          </p>
-          <div className="flex flex-wrap gap-2 pt-2 text-xs text-slate-100">
-            {[
-              "Stakeholder communication",
-              "Requirements gathering",
-              "Process mapping & PFDs",
-              "Dashboards & KPIs",
-              "Data analysis & reporting",
-              "Agile & Waterfall",
-              "Customer relations",
-              "Problem solving",
-              "Documentation",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+      {/* Projects */}
+      <section id="projects" className="mx-auto max-w-6xl px-6 pb-20 scroll-mt-10">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400 mb-8">
+          Featured projects
+        </h2>
 
-        <div id="projects" className="w-full space-y-4 md:w-1/2">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
-            Featured projects
+        <div className="grid gap-6 md:grid-cols-2">
+          {[
+            "Real-Time Delivery Insights Dashboard",
+            "PED Performance Analytics Dashboard",
+            "PO Completion VSM Insights Dashboard",
+            "Customer Complaint Analysis"
+          ].map((title, i) => (
+            <div key={i} className="group rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur hover:border-emerald-400/40 transition-all duration-300 shadow-lg">
+              <p className="font-semibold text-slate-100 group-hover:text-emerald-300 transition-colors">{title}</p>
+              <p className="mt-3 text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                {i === 0 && "Developed an interactive dashboard using Microsoft Power BI to monitor production and delivery performance based on purchase order completion. The solution provides visibility into key metrics such as order quantity, finished goods, and work-in-progress (WIP), along with closure status and department-wise responsibility. Integrated multiple data points (VSM, modules, timelines, and operational KPIs) to enable real-time tracking and decision-making. The dashboard helps stakeholders identify production bottlenecks, monitor open vs closed orders, and improve operational efficiency through actionable insights and data-driven analysis."}
+
+                {i === 1 && "Designed and developed an interactive performance monitoring dashboard using Microsoft Power BI to track PED (Planned vs Execution Delivery) performance across multiple production modules and weeks. The dashboard utilizes a heatmap visualization to highlight open and closed statuses, enabling quick identification of delays, bottlenecks, and high-risk modules. Integrated filters such as value stream, closure status, and PED categories to allow dynamic data exploration and drill-down analysis. This solution supports operational teams in monitoring weekly performance trends, improving delivery timelines, and driving data-driven decision-making through clear visual insights."}
+
+                {i === 2 && "Developed an interactive analytics dashboard using Microsoft Power BI to monitor purchase order (PO) completion performance across value streams and production modules. The dashboard provides visibility into order-wise completion percentages, highlighting gaps across multiple operational stages and identifying responsible departments such as Production, MQA, and RMW. Incorporated detailed metrics including order quantity, finished goods, WIP, and off-percentage (OFF%), along with department-wise WIP analysis to track bottlenecks. Enabled users to drill down into order-level data with actionable insights, supporting performance monitoring, delay analysis, and continuous process improvement."}
+
+                {i === 3 && "Identified root causes of customer complaints and improved processes using structured reporting and data analysis. Delivered insights that supported better decision-making and process improvements."}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="mx-auto max-w-5xl px-6 pb-16">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8 text-center backdrop-blur-xl shadow-xl">
+          <h2 className="text-lg font-semibold text-slate-200 mb-4">
+            Get in touch
           </h2>
-          <div className="space-y-3 text-sm text-slate-200">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <p className="font-semibold text-slate-50">
-                Real-time PO Completion Tracking Dashboard · MAS Bodyline 2
-              </p>
-              <p className="mt-1 text-slate-300">
-                Developed a real-time Power BI dashboard to track Production
-                Order completion and delivery status across VSM-01 and VSM-02.
-                Transformed an Excel-based PO Completion sheet into a dynamic,
-                automated view, improving visibility of delays, responsible
-                departments, and delivery-affected percentages to support
-                faster, data-driven decision-making.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <p className="font-semibold text-slate-50">
-                FTT Calculation · Hayleys Fabric PLC
-              </p>
-              <p className="mt-1 text-slate-300">
-                Calculated First Time Through (FTT) rates for Nike production,
-                analyzing efficiency and output quality in the initial cycle.
-                Prepared and distributed detailed FTT reports to Heads of
-                Departments, enabling informed decisions and continuous
-                improvement initiatives.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <p className="font-semibold text-slate-50">
-                A New Concept for Ceylon Tea Growers
-              </p>
-              <p className="mt-1 text-slate-300">
-                Coordinated and helped build a digital tea management system
-                using Node.js, MySQL, React, and Flutter to modernize Sri
-                Lanka&apos;s tea supply chain. Introduced admin dashboards and
-                mobile/web apps for collectors, growers, and factories,
-                reducing data entry time and errors while improving transparency
-                and decision-making.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <p className="font-semibold text-slate-50">
-                Customer Complaint Analysis · Hayleys Fabric PLC
-              </p>
-              <p className="mt-1 text-slate-300">
-                Collected and documented customer complaints in a structured
-                log, analyzed patterns and root causes, and presented insights
-                to senior stakeholders. Supported corrective actions with clear
-                reports and dashboards to improve customer satisfaction and
-                process reliability.
-              </p>
-            </div>
+
+          <p className="text-sm text-slate-400 mb-6">
+            Feel free to reach out for collaboration, opportunities, or just a chat.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:ash.kannangara@gmail.com"
+              className="rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 transition hover:scale-105"
+            >
+              Email Me
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ashika-kannangara-425aa0260/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-slate-600 bg-slate-900/40 px-6 py-2.5 text-sm font-medium text-slate-100 backdrop-blur transition hover:border-sky-400 hover:text-sky-300 hover:scale-105"
+            >
+              LinkedIn Profile
+            </a>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} Ashika Kannangara. All rights reserved.
+      </footer>
     </div>
   );
 }
