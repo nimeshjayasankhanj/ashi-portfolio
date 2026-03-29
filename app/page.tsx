@@ -50,6 +50,7 @@ export default function Home() {
               View projects
             </a>
           </div>
+
         </section>
 
         {/* Right Card with Integrated Image */}
