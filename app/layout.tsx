@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "Ashika Kannangara",
   description: "Ashika Kannangara",
   icons: {
-    icon: "/icon.png?v=4",
-    apple: "/icon.png?v=4", // Good for mobile bookmarks
+    icon: "/icon-2.png",
+    apple: "/icon-2.png", // Good for mobile bookmarks
   },
 };
 
