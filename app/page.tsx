@@ -1,4 +1,6 @@
 import Image from "next/image";
+// Using Feather Icons set from react-icons for a clean, professional look
+import { FiMail, FiLinkedin, FiExternalLink, FiArrowRight } from "react-icons/fi";
 
 export default function Home() {
   return (
@@ -10,7 +12,7 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-sky-500/10 blur-[120px]" />
       </div>
 
-      {/* Main Container - Aligned to top with md:items-start */}
+      {/* Main Container */}
       <main className="relative mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pt-12 pb-16 md:flex-row md:items-start md:justify-between md:pt-20 md:pb-24">
 
         {/* Hero / Intro */}
@@ -25,12 +27,12 @@ export default function Home() {
               <span className="bg-gradient-to-r from-emerald-300 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
                 Ashika Kannangara
               </span>
-              , a business analyst turning data into decisions.
+              , a Business Analyst turning data into decisions.
             </h1>
 
             <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
               I am a passionate and results-driven Business Analyst with a keen
-              eye for detail and a strong focus on data-driven decision-making.
+              eye for detail and a strong focus on data-driven decision making.
               I enjoy uncovering insights that drive business growth and
               operational efficiency.
             </p>
@@ -39,16 +41,18 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="mailto:ash.kannangara@gmail.com"
-              className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:scale-105"
             >
+              <FiMail className="text-lg" />
               Let&apos;s work together
             </a>
 
             <a
               href="#projects"
-              className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/40 px-6 py-2.5 text-sm font-medium text-slate-100 backdrop-blur transition hover:border-emerald-300 hover:text-emerald-200 hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-900/40 px-6 py-2.5 text-sm font-medium text-slate-100 backdrop-blur transition hover:border-emerald-300 hover:text-emerald-200 hover:scale-105"
             >
               View projects
+              <FiArrowRight />
             </a>
           </div>
         </section>
@@ -57,7 +61,7 @@ export default function Home() {
         <section className="w-full max-w-sm">
           <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/40 shadow-2xl backdrop-blur-xl">
 
-            {/* Image Header - High visibility */}
+            {/* Image Header */}
             <div className="relative h-80 w-full transition-all duration-500">
               <Image
                 src='/ashi.jpeg'
@@ -70,16 +74,24 @@ export default function Home() {
             </div>
 
             <div className="p-6 relative space-y-6">
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-slate-400 mb-2">
-                  Snapshot
-                </p>
-                <p className="text-sm leading-relaxed text-slate-200">
-                  I am a Business Analyst who transforms data into actionable
-                  insights to support informed decision-making. I analyze
-                  business processes and deliver practical, data-driven
-                  solutions that drive efficiency and growth.
-                </p>
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-400 mb-2">
+                    Snapshot
+                  </p>
+                  <p className="text-sm leading-relaxed text-slate-200">
+                    I transform data into actionable insights to support informed decision making.
+                  </p>
+                </div>
+                {/* Social Quick Links */}
+                <div className="flex gap-3">
+                  <a href="mailto:ash.kannangara@gmail.com" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                    <FiMail size={18} />
+                  </a>
+                  <a href="https://www.linkedin.com/in/ashika-kannangara-425aa0260/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 transition-colors">
+                    <FiLinkedin size={18} />
+                  </a>
+                </div>
               </div>
 
               <div>
@@ -90,11 +102,8 @@ export default function Home() {
                   {[
                     "Requirements",
                     "Process Optimization",
-                    "Data-driven Decision Making",
-                    "Production & Operations",
-                    "Supply Chain & Planning",
+                    "Supply Chain",
                     "Finance & Costing",
-                    "Quality & Compliance",
                     "Data & Reporting",
                   ].map((item) => (
                     <span
@@ -127,7 +136,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Projects - Restored Original Detailed Text */}
+      {/* Projects */}
       <section id="projects" className="mx-auto max-w-6xl px-6 pb-20 scroll-mt-10">
         <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400 mb-8">
           Featured projects
@@ -136,25 +145,33 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           {[
             {
-              title: "Real-Time Delivery Insights Dashboard MAS-Bodyline,Sri Lanka",
-              desc: "Developed an interactive dashboard using Microsoft Power BI to monitor production and delivery performance based on purchase order completion. The solution provides visibility into key metrics such as order quantity, finished goods, and work-in-progress (WIP), along with closure status and department-wise responsibility. Integrated multiple data points (VSM, modules, timelines, and operational KPIs) to enable real-time tracking and decision-making. The dashboard helps stakeholders identify production bottlenecks, monitor open vs closed orders, and improve operational efficiency through actionable insights and data-driven analysis."
+              title: "Real-Time Delivery Insights Dashboard",
+              location: "MAS-Bodyline, Sri Lanka",
+              desc: "Developed an interactive dashboard using Microsoft Power BI to monitor production and delivery performance. Integrated multiple data points to enable real-time tracking and decision-making."
             },
             {
-              title: "PED Performance Analytics Dashboard MAS-Bodyline,Sri Lanka",
-              desc: "Designed and developed an interactive performance monitoring dashboard using Microsoft Power BI to track PED (Planned vs Execution Delivery) performance across multiple production modules and weeks. The dashboard utilizes a heatmap visualization to highlight open and closed statuses, enabling quick identification of delays, bottlenecks, and high-risk modules. Integrated filters such as value stream, closure status, and PED categories to allow dynamic data exploration and drill-down analysis. This solution supports operational teams in monitoring weekly performance trends, improving delivery timelines, and driving data-driven decision-making through clear visual insights."
+              title: "PED Performance Analytics Dashboard",
+              location: "MAS-Bodyline, Sri Lanka",
+              desc: "Designed an interactive dashboard using heatmaps to highlight bottlenecks across production modules, driving data-driven improvements in delivery timelines."
             },
             {
-              title: "PO Completion VSM Insights Dashboard MAS-Bodyline,Sri Lanka",
-              desc: "Developed an interactive analytics dashboard using Microsoft Power BI to monitor purchase order (PO) completion performance across value streams and production modules. The dashboard provides visibility into order-wise completion percentages, highlighting gaps across multiple operational stages and identifying responsible departments such as Production, MQA, and RMW. Incorporated detailed metrics including order quantity, finished goods, WIP, and off-percentage (OFF%), along with department-wise WIP analysis to track bottlenecks. Enabled users to drill down into order-level data with actionable insights, supporting performance monitoring, delay analysis, and continuous process improvement."
+              title: "PO Completion VSM Insights",
+              location: "MAS-Bodyline, Sri Lanka",
+              desc: "Analytics dashboard to monitor purchase order completion across value streams, identifying departmental bottlenecks in Production, MQA, and RMW."
             },
             {
-              title: "Customer Complaint Analysis Hayleys Fabric,Sri Lanka",
-              desc: "Identified root causes of customer complaints and improved processes using structured reporting and data analysis. Delivered insights that supported better decision-making and process improvements."
+              title: "Customer Complaint Analysis",
+              location: "Hayleys Fabric, Sri Lanka",
+              desc: "Identified root causes of customer complaints using structured reporting to support process improvements and better decision-making."
             }
           ].map((project, i) => (
             <div key={i} className="group rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur hover:border-emerald-400/40 transition-all duration-300 shadow-lg">
-              <p className="font-semibold text-slate-100 group-hover:text-emerald-300 transition-colors">{project.title}</p>
-              <p className="mt-3 text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+              <div className="flex justify-between items-start mb-2">
+                <p className="font-semibold text-slate-100 group-hover:text-emerald-300 transition-colors">{project.title}</p>
+                <FiExternalLink className="text-slate-500 group-hover:text-emerald-300" />
+              </div>
+              <p className="text-[10px] uppercase tracking-wider text-emerald-500/80 mb-3">{project.location}</p>
+              <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
                 {project.desc}
               </p>
             </div>
@@ -162,19 +179,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact Section */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8 text-center backdrop-blur-xl shadow-xl">
-          <h2 className="text-lg font-semibold text-slate-200 mb-4">Get in touch</h2>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-10 text-center backdrop-blur-xl shadow-xl">
+          <h2 className="text-2xl font-semibold text-slate-100 mb-2">Let&apos;s Connect</h2>
+          <p className="text-slate-400 mb-8 max-w-md mx-auto">Currently open to new opportunities and collaborations in Business Analysis and Data Strategy.</p>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:ash.kannangara@gmail.com" className="rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 transition hover:scale-105">Email Me</a>
-            <a href="https://www.linkedin.com/in/ashika-kannangara-425aa0260/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-600 bg-slate-900/40 px-6 py-2.5 text-sm font-medium text-slate-100 backdrop-blur transition hover:border-sky-400 hover:text-sky-300 hover:scale-105">LinkedIn Profile</a>
+            <a
+              href="mailto:ash.kannangara@gmail.com"
+              className="group flex items-center gap-3 rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-400 hover:scale-105"
+            >
+              <FiMail className="text-lg transition-transform group-hover:-rotate-12" />
+              Email Me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ashika-kannangara-425aa0260/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 rounded-full border border-slate-700 bg-slate-800/50 px-8 py-3 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-sky-400 hover:text-sky-300 hover:scale-105"
+            >
+              <FiLinkedin className="text-lg" />
+              LinkedIn Profile
+            </a>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Ashika Kannangara. All rights reserved.
+      <footer className="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} Ashika Kannangara. Built with Next.js & Tailwind.
       </footer>
     </div>
   );
